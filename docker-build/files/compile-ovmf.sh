@@ -19,11 +19,12 @@ export EDK_TOOLS_PATH="${SRC_DIR}/BaseTools"
 cd ${SRC_DIR}
 mkdir -p bin
 ln -sf /usr/bin/python3 bin/python
+git clean -xfd
 git pull
 #git checkout vUDK2018
 git checkout ba0e0e4
 git pull --recurse-submodules
-git submodule update --recursive
+git submodule update --init --recursive
 
 # Build Basetools
 make -C BaseTools
